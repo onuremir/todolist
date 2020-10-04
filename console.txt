@@ -1,0 +1,100 @@
+onur@onur-lnx:~/Documents/python$ cd todolist/
+onur@onur-lnx:~/Documents/python/todolist$ git init
+Initialized empty Git repository in /home/onur/Documents/python/todolist/.git/
+onur@onur-lnx:~/Documents/python/todolist$ git add .
+onur@onur-lnx:~/Documents/python/todolist$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   .gitignore
+        new file:   application/controller/__init__.py
+        new file:   application/model/__init__.py
+        new file:   application/view/__init__.py
+        new file:   config.py
+        new file:   readme.md
+        new file:   requirements.txt
+        new file:   todolist.py
+
+onur@onur-lnx:~/Documents/python/todolist$ git commit -m "initial folder structure"                                      [master (root-commit) 75b86f5] initial folder structure
+ 8 files changed, 378 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 application/controller/__init__.py
+ create mode 100644 application/model/__init__.py
+ create mode 100644 application/view/__init__.py
+ create mode 100644 config.py
+ create mode 100644 readme.md
+ create mode 100644 requirements.txt
+ create mode 100644 todolist.py
+onur@onur-lnx:~/Documents/python/todolist$ git remote add origin  https://github.com/onuremir/todolist.git
+onur@onur-lnx:~/Documents/python/todolist$ git push -u origin master
+Counting objects: 9, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (9/9), 3.14 KiB | 3.14 MiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0)
+To https://github.com/onuremir/todolist.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+onur@onur-lnx:~/Documents/python/todolist$ python3 -m venv
+usage: venv [-h] [--system-site-packages] [--symlinks | --copies] [--clear]
+            [--upgrade] [--without-pip] [--prompt PROMPT]
+            ENV_DIR [ENV_DIR ...]
+venv: error: the following arguments are required: ENV_DIR
+onur@onur-lnx:~/Documents/python/todolist$ python3 -m venv venv
+onur@onur-lnx:~/Documents/python/todolist$ source ./venv/bin/activate
+
+(venv) onur@onur-lnx:~/Documents/python/todolist$ python3 -m pip install -r requirements.txt
+Collecting flask==s1.1.2 (from -r requirements.txt (line 1))
+  Could not find a version that satisfies the requirement flask==s1.1.2 (from -r requirements.txt (line 1)) (from versions: 0.1, 0.2, 0.3, 0.3.1, 0.4, 0.5, 0.5.1, 0.5.2, 0.6, 0.6.1, 0.7, 0.7.1, 0.7.2, 0.8, 0.8.1, 0.9, 0.10, 0.10.1, 0.11, 0.11.1, 0.12, 0.12.1, 0.12.2, 0.12.3, 0.12.4, 0.12.5, 1.0, 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.1.0, 1.1.1, 1.1.2)
+No matching distribution found for flask==s1.1.2 (from -r requirements.txt (line 1))
+(venv) onur@onur-lnx:~/Documents/python/todolist$ python3 -m pip install -r requirements.txt
+Collecting flask==1.1.2 (from -r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/f2/28/2a03252dfb9ebf377f40fba6a7841b47083260bf8bd8e737b0c6952df83f/Flask-1.1.2-py2.py3-none-any.whl (94kB)
+    100% |████████████████████████████████| 102kB 452kB/s 
+Collecting itsdangerous>=0.24 (from flask==1.1.2->-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+Collecting Werkzeug>=0.15 (from flask==1.1.2->-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/cc/94/5f7079a0e00bd6863ef8f1da638721e9da21e5bacee597595b318f71d62e/Werkzeug-1.0.1-py2.py3-none-any.whl (298kB)
+    100% |████████████████████████████████| 307kB 714kB/s 
+Collecting Jinja2>=2.10.1 (from flask==1.1.2->-r requirements.txt (line 1))
+  Cache entry deserialization failed, entry ignored
+  Cache entry deserialization failed, entry ignored
+  Downloading https://files.pythonhosted.org/packages/30/9e/f663a2aa66a09d838042ae1a2c5659828bb9b41ea3a6efa20a20fd92b121/Jinja2-2.11.2-py2.py3-none-any.whl (125kB)
+    100% |████████████████████████████████| 133kB 810kB/s 
+Collecting click>=5.1 (from flask==1.1.2->-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/d2/3d/fa76db83bf75c4f8d338c2fd15c8d33fdd7ad23a9b5e57eb6c5de26b430e/click-7.1.2-py2.py3-none-any.whl (82kB)
+    100% |████████████████████████████████| 92kB 991kB/s 
+Collecting MarkupSafe>=0.23 (from Jinja2>=2.10.1->flask==1.1.2->-r requirements.txt (line 1))
+  Cache entry deserialization failed, entry ignored
+  Using cached https://files.pythonhosted.org/packages/b2/5f/23e0023be6bb885d00ffbefad2942bc51a620328ee910f64abe5a8d18dd1/MarkupSafe-1.1.1-cp36-cp36m-manylinux1_x86_64.whl
+Installing collected packages: itsdangerous, Werkzeug, MarkupSafe, Jinja2, click, flask
+Successfully installed Jinja2-2.11.2 MarkupSafe-1.1.1 Werkzeug-1.0.1 click-7.1.2 flask-1.1.2 itsdangerous-1.1.0
+
+(venv) onur@onur-lnx:~/Documents/python/todolist$ python3 todolist.py
+
+(venv) onur@onur-lnx:~/Documents/python/todolist$ python3 todolist.py
+* Serving Flask app "application.controller.controller" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 819-516-388
+127.0.0.1 - - [04/Oct/2020 19:05:09] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2020 19:05:09] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2020 19:05:09] "GET /favicon.ico HTTP/1.1" 404 -
+^Z
+[1]+  Stopped                 python3 todolist.py
+
+
+/*****
+**requirements dosyasındaki değişikjliği master a commit edeceğim.
+**Sonra yeni bir branch yaratacağım mvc_1 diğer dosyaları ona push edeceğim.
+*/
