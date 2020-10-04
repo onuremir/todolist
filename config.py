@@ -1,2 +1,5 @@
+import os
+
 class Config:
-    pass
+    _TEMPLATE_FOLDER = os.getcwd() + "/application/view"
+    _STATIC_FOLDER = os.getcwd() + "/static"
